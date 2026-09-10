@@ -1,0 +1,28 @@
+{
+  "name": "stash-local",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test:native": "python3 -m unittest discover -s tests -p 'test_*.py' -v",
+    "test:e2e": "PLAYWRIGHT_BROWSERS_PATH=.browsers playwright test",
+    "test:external": "python3 scripts/external_test.py",
+    "verify": "npm run typecheck && npm run build && npm run test:native && npm run test:e2e",
+    "install:host": "python3 scripts/install.py",
+    "diagnose": "python3 scripts/install.py --diagnose",
+    "uninstall:host": "python3 scripts/install.py --uninstall",
+    "setup:tests": "python3 scripts/setup_tests.py",
+    "test:chrome": "PLAYWRIGHT_BROWSERS_PATH=.browsers node scripts/chrome_smoke.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/chrome": "^0.1.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

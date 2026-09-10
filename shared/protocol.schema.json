@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Stash Local request v1",
+  "type": "object",
+  "required": [
+    "protocolVersion",
+    "requestId",
+    "type",
+    "payload"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "protocolVersion": {
+      "const": 1
+    },
+    "requestId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "type": {
+      "enum": [
+        "hello",
+        "diagnose",
+        "inspect",
+        "enqueue",
+        "cancel",
+        "retry",
+        "getSnapshot",
+        "revealFile",
+        "deleteJob",
+        "openPlayback",
+        "closePlayback",
+        "savePlaybackPosition",
+        "cancelInspect",
+        "deleteJobs",
+        "checkUpdate",
+        "getUpdateStatus",
+        "startUpdate"
+      ]
+    },
+    "payload": {
+      "type": "object"
+    }
+  }
+}

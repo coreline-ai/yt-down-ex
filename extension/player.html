@@ -1,0 +1,7 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stash Local · 재생</title></head><body><main>
+<header><div><p class="eyebrow">STASH LOCAL / PLAYER</p><h1 id="title">영상 불러오는 중…</h1><p id="metadata"></p></div><button id="reconnect">다시 연결</button></header>
+<section id="screen" aria-label="영상 플레이어"><video id="video" playsinline preload="metadata" tabindex="0"></video><div class="controls">
+<label class="seek-label"><span id="time">0:00 / 0:00</span><input id="seek" aria-label="재생 위치" type="range" min="0" max="1" step="0.1" value="0"></label>
+<div class="buttons"><button id="toggle" aria-label="재생">재생 ▶</button><button id="back">−10초</button><button id="forward">+10초</button><button id="mute">음소거</button><input id="volume" aria-label="음량" type="range" min="0" max="1" step="0.05" value="1"><label>배속 <select id="speed"><option>0.5</option><option selected>1</option><option>1.25</option><option>1.5</option><option>2</option></select></label><button id="fullscreen">전체화면</button></div>
+</div></section><p id="status" role="status"></p><p class="shortcuts">Space 재생/정지 · ← → 10초 이동 · M 음소거 · F 전체화면</p>
+</main><script type="module" src="/src/player/index.ts"></script></body></html>

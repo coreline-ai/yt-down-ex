@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Stash Local",
+  "version": "0.2.0",
+  "description": "주소를 넣고 내 PC에 미디어를 저장하세요. 로컬 보조 프로그램이 필요합니다.",
+  "minimum_chrome_version": "116",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuYuPHtKqrVr9y/XQpcNHCA+2TTJaNbBS/dpZZMCWNGXxCT/NBZUk+pJWkzan2KrvWNrOUD9DunljHpaGUksy9s7Su5a5SDH06u1r8aWhQoaKUy4Nc5zHcuDrng4yAEPMeMgsBKmllk6gOmr7hhm8OyXy0vQCyDVvQJ+Uc9OoBsvC++SfsJPDmTmBQr5wGwkziiMXI7yLiybptJUExqnphDDvHtgcd9hai3LWgH8RatDgN4hSQ50dbll+1oHewI5SWlfqHDTS28/NyCdNeAZWe3PZiCRSRoAxSIUflfmWfUY1teaF4s0KivClAFX3Nbr/r1Ql8/YKT1MvGP3/Y49ShwIDAQAB",
+  "permissions": [
+    "nativeMessaging",
+    "storage",
+    "sidePanel",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Stash Local 열기"
+  },
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+  "host_permissions": [
+    "http://127.0.0.1/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; media-src http://127.0.0.1:*; connect-src 'self' http://127.0.0.1:*;"
+  }
+}
