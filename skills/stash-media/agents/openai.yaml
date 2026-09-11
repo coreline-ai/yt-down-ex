@@ -1,0 +1,6 @@
+interface:
+  display_name: "Stash Media"
+  short_description: "Chrome 없이 영상 다운로드·MP3 추출·로컬 재생"
+  default_prompt: "$stash-media로 이 주소의 영상을 MP4로 다운로드하고 검증해줘."
+policy:
+  allow_implicit_invocation: true
